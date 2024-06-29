@@ -1,17 +1,18 @@
 use crate::as_ref::as_ref;
+use crate::gcd::find_gcd;
 use crate::is_some::is_some_demo;
+use crate::smallest_subsequence::smallest_subsequence;
 use crate::unwrap::unwrap_demo;
 
 mod is_some;
 mod as_ref;
 mod unwrap;
 mod middle_node;
+mod smallest_subsequence;
+mod or_insert;
+mod gcd;
 
-fn main() {
-    // is_some_demo();
-    // as_ref();
-    // unwrap_demo();
-
+fn test_middle_node() {
     // 创建链表 1 -> 2 -> 3 -> 4 -> 5
     let mut node5 = Box::new(crate::middle_node::ListNode::new(5));
     let mut node4 = Box::new(crate::middle_node::ListNode::new(4));
@@ -29,4 +30,22 @@ fn main() {
     if let Some(mid) = crate::middle_node::Solution::middle_node(head) {
         println!("The middle node is: {}", mid.val); // 输出: The middle node is: 3
     }
+}
+
+fn test_smallest_subsequence() {
+    let s = String::from("cbacdcbc");
+    println!("{}", smallest_subsequence(s));
+}
+
+fn test_find_gcd() {
+    let nums1 = vec![2, 5, 6, 9, 10];
+    let nums2 = vec![7, 5, 6, 8, 3];
+    let nums3 = vec![3, 3];
+    println!("{}", find_gcd(nums1));
+    println!("{}", find_gcd(nums2));
+    println!("{}", find_gcd(nums3));
+}
+
+fn main() {
+    test_find_gcd();
 }
