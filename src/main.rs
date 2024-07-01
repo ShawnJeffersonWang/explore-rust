@@ -1,6 +1,7 @@
 use crate::as_ref::as_ref;
 use crate::gcd::find_gcd;
 use crate::is_some::is_some_demo;
+use crate::next_permutation::next_permutation;
 use crate::smallest_subsequence::smallest_subsequence;
 use crate::unwrap::unwrap_demo;
 
@@ -11,6 +12,8 @@ mod middle_node;
 mod smallest_subsequence;
 mod or_insert;
 mod gcd;
+mod next_permutation;
+mod partition_labels;
 
 fn test_middle_node() {
     // 创建链表 1 -> 2 -> 3 -> 4 -> 5
@@ -46,6 +49,16 @@ fn test_find_gcd() {
     println!("{}", find_gcd(nums3));
 }
 
+fn test_next_permutation() {
+    let mut nums = vec![1, 2, 3];
+    println!("{:?}", nums);
+    for i in 0..6 {
+        next_permutation(&mut nums);
+        println!("{:?}", nums);
+    }
+}
+
 fn main() {
-    test_find_gcd();
+    // test_find_gcd();
+    test_next_permutation();
 }
