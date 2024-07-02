@@ -15,6 +15,7 @@ mod gcd;
 mod next_permutation;
 mod partition_labels;
 mod reverse_list;
+mod candy;
 
 fn test_middle_node() {
     // 创建链表 1 -> 2 -> 3 -> 4 -> 5
